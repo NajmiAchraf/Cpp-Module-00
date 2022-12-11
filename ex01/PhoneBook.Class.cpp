@@ -3,7 +3,7 @@
 PhoneBook::PhoneBook() {
 	std::cout << "Constructor called" << std::endl;
 	for (int i = 0; i < 8; ++i)
-		Contacts[i].index = i + 1;
+		Contacts[i].set_index(i + 1);
 	this->full = 0;
 	this->reset_id();
 }
@@ -43,11 +43,7 @@ void	PhoneBook::add() {
 	std::cout << "Enter The Darkest Secret : ";
 	std::cin >> this->darkest_secret;
 
-	Contacts[this->index].first_name = this->first_name;
-	Contacts[this->index].nickname = this->nickname;
-	Contacts[this->index].last_name = this->last_name;
-	Contacts[this->index].phone_number = this->phone_number;
-	Contacts[this->index].darkest_secret = this->darkest_secret;
+	Contacts[this->index].set_elements(first_name, nickname, last_name, phone_number, darkest_secret);
 }
 
 void	PhoneBook::show() {

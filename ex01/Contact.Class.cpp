@@ -36,10 +36,22 @@ void	Contact::show_contacts(void) {
 }
 
 void	Contact::contact_info(void) {
-	std::cout << "Index : " << this->index << std::endl;
-	std::cout << "First Name : " << this->first_name << std::endl;
-	std::cout << "Nickname : " << this->nickname << std::endl;
-	std::cout << "Last Name : " << this->last_name << std::endl;
-	std::cout << "Phone Number : " << this->phone_number << std::endl;
-	std::cout << "Darkest Secret : " << this->darkest_secret << std::endl;
+	std::cout << "Index			: " << this->index << std::endl;
+	std::cout << "First Name		: " << this->first_name << std::endl;
+	std::cout << "Nickname		: " << this->nickname << std::endl;
+	std::cout << "Last Name		: " << this->last_name << std::endl;
+	std::cout << "Phone Number		: " << this->phone_number << std::endl;
+	std::cout << "Darkest Secret		: " << this->darkest_secret << std::endl;
+}
+
+void	Contact::set_index(std::int32_t index) {
+	this->index = index;
+}
+
+void	Contact::set_elements(std::string first_name, std::string nickname, std::string last_name, std::string phone_number, std::string darkest_secret) {
+	this->first_name = first_name;
+	this->nickname = nickname;
+	this->last_name = last_name;
+	this->phone_number = phone_number;
+	this->darkest_secret = darkest_secret;
 }

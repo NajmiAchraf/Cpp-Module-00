@@ -16,7 +16,6 @@ private:
 	Contact			Contacts[8];
 
 public:
-
 	PhoneBook();
 	~PhoneBook();
 	void	set_full_id();

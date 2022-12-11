@@ -11,7 +11,7 @@ void	print_int(std::int32_t integer);
 
 class Contact {
 
-public:
+private:
 	std::int32_t index;
 	std::string first_name;
 	std::string nickname;
@@ -19,10 +19,14 @@ public:
 	std::string phone_number;
 	std::string darkest_secret;
 
+public:
 	Contact(int id = -1);
 	~Contact(void);
 	void	show_contacts(void);
 	void	contact_info(void);
-};
+
+	void	set_index(std::int32_t index);
+	void	set_elements(std::string first_name, std::string nickname, std::string last_name, std::string phone_number, std::string darkest_secret);
+	};
 
 #endif
