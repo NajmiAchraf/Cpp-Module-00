@@ -12,7 +12,8 @@ CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRCS = \
 	main.cpp			\
-#	Contact.Class.cpp	\
+	Contact.Class.cpp	\
+	PhoneBook.Class.cpp	\
 
 OBJ = $(SRCS:.cpp=.o)
 
