@@ -23,7 +23,7 @@ public:
 	void	reset_id();
 	void	increment();
 	void	add();
-	void	show ();
+	void	show();
 };
 
 #endif

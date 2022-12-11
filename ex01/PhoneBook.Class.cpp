@@ -50,7 +50,7 @@ void	PhoneBook::add() {
 	Contacts[this->index].darkest_secret = this->darkest_secret;
 }
 
-void	PhoneBook::show (){
+void	PhoneBook::show() {
 	std::string input;
 
 	std::cout << "---------------------------------------------" << std::endl;

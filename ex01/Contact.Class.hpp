@@ -9,7 +9,6 @@ std::string truncate(std::string str, size_t width);
 void	print_str(std::string str);
 void	print_int(std::int32_t integer);
 
-
 class Contact {
 
 public:
@@ -20,14 +19,10 @@ public:
 	std::string phone_number;
 	std::string darkest_secret;
 
-
 	Contact(int id = -1);
-
 	~Contact(void);
-
-	void show_contacts(void);
-
-	void contact_info(void);
+	void	show_contacts(void);
+	void	contact_info(void);
 };
 
 #endif
