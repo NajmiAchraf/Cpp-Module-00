@@ -1,4 +1,4 @@
-#include "Contact.Class.hpp"
+#include "Contact.hpp"
 
 std::string Contact::truncate(std::string str, size_t width) const {
 	if (str.length() > width)

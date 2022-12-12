@@ -12,7 +12,7 @@ CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRCS = \
 	Account.cpp	\
-	Tests.cpp	\
+	tests.cpp	\
 
 OBJ = $(SRCS:.cpp=.o)
 

@@ -50,6 +50,7 @@ Account::Account( int initial_deposit ) {
 			  << ";created" << std::endl;
 
 }
+
 Account::~Account( void ) {
 	/*[19920104_091532] index:0;amount:47;closed*/
 	_displayTimestamp();
