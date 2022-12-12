@@ -50,4 +50,4 @@ re : fclean all
 
 run : re
 	@echo "$(C_L_BLUE)[RUN ${NAME_UP}!]$(C_RES)"
-	@./$(NAME) "hello world"
+	@./$(NAME) Damnit " ! " "Sorry students, I thought this thing was off."
