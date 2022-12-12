@@ -3,8 +3,8 @@
 PhoneBook::PhoneBook() {
 	std::cout << "Constructor called" << std::endl;
 	for (int i = 0; i < 8; ++i)
-		Contacts[i].set_index(i + 1);
-	this->full = 0;
+		this->_Contacts[i].set_index(i + 1);
+	this->_full = 0;
 	this->reset_id();
 }
 
@@ -13,37 +13,39 @@ PhoneBook::~PhoneBook() {
 }
 
 void	PhoneBook::set_full_id() {
-	this->full = 7;
+	this->_full = 7;
 }
 
 void	PhoneBook::reset_id() {
-	this->index = -1;
+	this->_index = -1;
 }
 
 void	PhoneBook::increment() {
-	if (this->full >= 7)
+	if (this->_full >= 7)
 		this->set_full_id();
-	this->full++;
-	if (this->index == 7)
+	this->_full++;
+	if (this->_index == 7)
 		this->reset_id();
-	this->index++;
+	this->_index++;
 }
 
 void	PhoneBook::add() {
 	this->increment();
 
 	std::cout << "Enter The First Name : ";
-	std::cin >> this->first_name;
+	std::cin >> this->_first_name;
 	std::cout << "Enter The Nickname : ";
-	std::cin >> this->nickname;
+	std::cin >> this->_nickname;
 	std::cout << "Enter The Last Name : ";
-	std::cin >> this->last_name;
+	std::cin >> this->_last_name;
 	std::cout << "Enter The Phone Number : ";
-	std::cin >> this->phone_number;
+	std::cin >> this->_phone_number;
 	std::cout << "Enter The Darkest Secret : ";
-	std::cin >> this->darkest_secret;
+	std::cin >> this->_darkest_secret;
 
-	Contacts[this->index].set_elements(first_name, nickname, last_name, phone_number, darkest_secret);
+	this->_Contacts[this->_index].set_elements(this->_first_name, \
+		this->_nickname, this->_last_name, this->_phone_number, \
+		this->_darkest_secret);
 }
 
 void	PhoneBook::show() {
@@ -53,8 +55,8 @@ void	PhoneBook::show() {
 	std::cout << "|" << "index     " << "|" << "first name";
 	std::cout << "|" << "last name " << "|" << "nickname  " << "|" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
-	for (int i = 0; i < this->full; ++i) {
-		Contacts[i].show_contacts();
+	for (int i = 0; i < this->_full; ++i) {
+		this->_Contacts[i].show_contacts();
 	}
 
 	while (true) {
@@ -62,9 +64,9 @@ void	PhoneBook::show() {
 		std::cin >> input;
 		if (std::cin.eof())
 			exit(0);
-		if (1 <= (int)atoi(input.c_str()) && (int)atoi(input.c_str()) <= toascii(this->full))
+		if (1 <= (int)atoi(input.c_str()) && (int)atoi(input.c_str()) <= toascii(this->_full))
 		{
-			Contacts[atoi(input.c_str()) - 1].contact_info();
+			this->_Contacts[atoi(input.c_str()) - 1].contact_info();
 			break;
 		}
 		if (input == "0")
