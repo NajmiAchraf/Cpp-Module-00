@@ -35,7 +35,7 @@ Account::Account( int initial_deposit ) {
 
 	_nbAccounts++;
 
-	this->_accountIndex = _nbAccounts;
+	this->_accountIndex = _nbAccounts - 1;
 	this->_amount = initial_deposit;
 
 	_totalAmount += this->_amount;
