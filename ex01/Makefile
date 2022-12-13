@@ -13,7 +13,7 @@ CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 SRCS = \
 	Contact.cpp	\
 	PhoneBook.cpp	\
-	Phone.cpp		\
+	main.cpp		\
 
 OBJ = $(SRCS:.cpp=.o)
 

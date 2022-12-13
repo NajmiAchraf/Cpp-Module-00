@@ -56,6 +56,10 @@ void	PhoneBook::add() {
 void	PhoneBook::show() {
 	std::string input;
 
+	if (this->_full == 0) {
+		std::cout << "No contacts to show" << std::endl;
+		return ;
+	}
 	std::cout << "---------------------------------------------" << std::endl;
 	std::cout << "|" << "index     " << "|" << "first name";
 	std::cout << "|" << "last name " << "|" << "nickname  " << "|" << std::endl;
