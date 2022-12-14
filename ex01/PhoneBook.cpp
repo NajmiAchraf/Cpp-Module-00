@@ -65,8 +65,8 @@ void	PhoneBook::show() {
 		return ;
 	}
 	std::cout << "	---------------------------------------------" << std::endl;
-	std::cout << "	|" << "index     " << "|" << "first name";
-	std::cout << "|" << "last name " << "|" << "nickname  " << "|" << std::endl;
+	std::cout << "	|" << "index     " << "|" << "first name"
+				<< "|" << "last name " << "|" << "nickname  " << "|" << std::endl;
 	std::cout << "	---------------------------------------------" << std::endl;
 	for (int i = 0; i < this->_full; ++i) {
 		this->_Contacts[i].show_contacts();
@@ -76,7 +76,7 @@ void	PhoneBook::show() {
 		std::cout << "Enter the index of the contact that you want to show all his infos (0 to break): ";
 		std::getline(std::cin, input);
 		this->control_D();
-		if (input.length() < 2 && std::isdigit(input[0]))
+		if (input.length() == 1 && std::isdigit(input[0]))
 		{
 			if (std::stoi(input) == 0)
 				break;
