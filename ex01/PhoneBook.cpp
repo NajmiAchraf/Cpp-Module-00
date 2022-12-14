@@ -30,23 +30,74 @@ void	PhoneBook::increment() {
 }
 
 void	PhoneBook::add() {
+	std::string input;
 	this->increment();
 
-	std::cout << "Enter The First Name : ";
-	std::cin >> this->_first_name;
-	this->crtl_d();
-	std::cout << "Enter The Nickname : ";
-	std::cin >> this->_nickname;
-	this->crtl_d();
-	std::cout << "Enter The Last Name : ";
-	std::cin >> this->_last_name;
-	this->crtl_d();
-	std::cout << "Enter The Phone Number : ";
-	std::cin >> this->_phone_number;
-	this->crtl_d();
-	std::cout << "Enter The Darkest Secret : ";
-	std::cin >> this->_darkest_secret;
-	this->crtl_d();
+	while (true) {
+		std::cout << "Enter First Name: ";
+		std::getline(std::cin, input);
+		this->control_D();
+		if (input.empty())
+			std::cout << "First Name cannot be empty." << std::endl;
+		if (input.length() > 0)
+		{
+			this->_first_name = input;
+			input = "";
+			break;
+		}
+	}
+	while (true) {
+		std::cout << "Enter Nickname: ";
+		std::getline(std::cin, input);
+		this->control_D();
+		if (input.empty())
+			std::cout << "Nickname cannot be empty." << std::endl;
+		if (input.length() > 0)
+		{
+			this->_nickname = input;
+			input = "";
+			break;
+		}
+	}
+	while (true) {
+		std::cout << "Enter Last Name: ";
+		std::getline(std::cin, input);
+		this->control_D();
+		if (input.empty())
+			std::cout << "Last Name cannot be empty." << std::endl;
+		if (input.length() > 0)
+		{
+			this->_last_name = input;
+			input = "";
+			break;
+		}
+	}
+	while (true) {
+		std::cout << "Enter Phone Number: ";
+		std::getline(std::cin, input);
+		this->control_D();
+		if (input.empty())
+			std::cout << "Phone Number cannot be empty." << std::endl;
+		if (input.length() > 0)
+		{
+			this->_phone_number = input;
+			input = "";
+			break;
+		}
+	}
+	while (true) {
+		std::cout << "Enter Darkest Secret: ";
+		std::getline(std::cin, input);
+		this->control_D();
+		if (input.empty())
+			std::cout << "Darkest Secret cannot be empty." << std::endl;
+		if (input.length() > 0)
+		{
+			this->_darkest_secret = input;
+			input = "";
+			break;
+		}
+	}
 
 	this->_Contacts[this->_index].set_elements(this->_first_name, \
 		this->_nickname, this->_last_name, this->_phone_number, \
@@ -70,19 +121,26 @@ void	PhoneBook::show() {
 
 	while (true) {
 		std::cout << "Enter the index of the contact that you want to show all his infos (0 to break): ";
-		std::cin >> input;
-		this->crtl_d();
-		if (1 <= (int)atoi(input.c_str()) && (int)atoi(input.c_str()) <= toascii(this->_full))
+		std::getline(std::cin, input);
+		this->control_D();
+		if (input.length() < 2 && std::isdigit(input[0]))
 		{
-			this->_Contacts[atoi(input.c_str()) - 1].contact_info();
-			break;
+			if (std::stoi(input) == 0)
+				break;
+			if (1 <= std::stoi(input) && std::stoi(input) <= this->_full)
+			{
+				this->_Contacts[atoi(input.c_str()) - 1].contact_info();
+				break;
+			}
 		}
-		if (input == "0")
-			break;
+		if (input.empty())
+			std::cout << "Index cannot be empty." << std::endl;
+		else
+			std::cout << "Invalid index." << std::endl;
 	}
 }
 
-void	PhoneBook::crtl_d() {
+void	PhoneBook::control_D() {
 	if (std::cin.eof())
 		exit(0);
 }

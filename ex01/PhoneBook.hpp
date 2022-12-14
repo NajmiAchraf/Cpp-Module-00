@@ -28,7 +28,7 @@ public:
 	void	increment();
 	void	add();
 	void	show();
-	void	crtl_d();
+	void	control_D();
 
 };
 
