@@ -12,7 +12,7 @@ void	Contact::print_str(std::string str) const {
 }
 
 void	Contact::print_int(std::int32_t integer) const {
-	std::cout << "|" ;
+	std::cout << "	|" ;
 	std::cout << std::left << std::setw(10) << integer;
 }
 
@@ -31,16 +31,16 @@ void	Contact::show_contacts(void) {
 	print_str(this->_last_name);
 	print_str(this->_nickname);
 	std::cout << "|" << std::endl;
-	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "	---------------------------------------------" << std::endl;
 }
 
 void	Contact::contact_info(void) {
-	std::cout << "Index			: " << this->_index << std::endl;
-	std::cout << "First Name		: " << this->_first_name << std::endl;
-	std::cout << "Nickname		: " << this->_nickname << std::endl;
-	std::cout << "Last Name		: " << this->_last_name << std::endl;
-	std::cout << "Phone Number		: " << this->_phone_number << std::endl;
-	std::cout << "Darkest Secret		: " << this->_darkest_secret << std::endl;
+	std::cout << "	Index		: " << this->_index << std::endl;
+	std::cout << "	First Name	: " << this->_first_name << std::endl;
+	std::cout << "	Nickname	: " << this->_nickname << std::endl;
+	std::cout << "	Last Name	: " << this->_last_name << std::endl;
+	std::cout << "	Phone Number	: " << this->_phone_number << std::endl;
+	std::cout << "	Darkest Secret	: " << this->_darkest_secret << std::endl;
 }
 
 void	Contact::set_index(std::int32_t index) {

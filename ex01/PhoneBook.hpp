@@ -23,12 +23,13 @@ public:
 	PhoneBook();
 	~PhoneBook();
 
-	void	set_full_id();
-	void	reset_id();
-	void	increment();
-	void	add();
-	void	show();
-	void	control_D();
+	void		set_full_id();
+	void		reset_id();
+	void		increment();
+	std::string	template_add(std::string info);
+	void		add();
+	void		show();
+	void		control_D();
 
 };
 

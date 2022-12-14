@@ -29,75 +29,28 @@ void	PhoneBook::increment() {
 	this->_index++;
 }
 
-void	PhoneBook::add() {
+std::string	PhoneBook::template_add(std::string info) {
 	std::string input;
-	this->increment();
 
 	while (true) {
-		std::cout << "Enter First Name: ";
+		std::cout << "Enter " << info << ": ";
 		std::getline(std::cin, input);
 		this->control_D();
 		if (input.empty())
-			std::cout << "First Name cannot be empty." << std::endl;
+			std::cout  << info << " cannot be empty." << std::endl;
 		if (input.length() > 0)
-		{
-			this->_first_name = input;
-			input = "";
-			break;
-		}
+			return input;
 	}
-	while (true) {
-		std::cout << "Enter Nickname: ";
-		std::getline(std::cin, input);
-		this->control_D();
-		if (input.empty())
-			std::cout << "Nickname cannot be empty." << std::endl;
-		if (input.length() > 0)
-		{
-			this->_nickname = input;
-			input = "";
-			break;
-		}
-	}
-	while (true) {
-		std::cout << "Enter Last Name: ";
-		std::getline(std::cin, input);
-		this->control_D();
-		if (input.empty())
-			std::cout << "Last Name cannot be empty." << std::endl;
-		if (input.length() > 0)
-		{
-			this->_last_name = input;
-			input = "";
-			break;
-		}
-	}
-	while (true) {
-		std::cout << "Enter Phone Number: ";
-		std::getline(std::cin, input);
-		this->control_D();
-		if (input.empty())
-			std::cout << "Phone Number cannot be empty." << std::endl;
-		if (input.length() > 0)
-		{
-			this->_phone_number = input;
-			input = "";
-			break;
-		}
-	}
-	while (true) {
-		std::cout << "Enter Darkest Secret: ";
-		std::getline(std::cin, input);
-		this->control_D();
-		if (input.empty())
-			std::cout << "Darkest Secret cannot be empty." << std::endl;
-		if (input.length() > 0)
-		{
-			this->_darkest_secret = input;
-			input = "";
-			break;
-		}
-	}
+}
+
+void	PhoneBook::add() {
+	this->increment();
+
+	this->_first_name = template_add("First Name");
+	this->_nickname = template_add("Nickname");
+	this->_last_name = template_add("Last Name");
+	this->_phone_number = template_add("Phone Number");
+	this->_darkest_secret = template_add("Darkest Secret");
 
 	this->_Contacts[this->_index].set_elements(this->_first_name, \
 		this->_nickname, this->_last_name, this->_phone_number, \
@@ -111,10 +64,10 @@ void	PhoneBook::show() {
 		std::cout << "No contacts to show" << std::endl;
 		return ;
 	}
-	std::cout << "---------------------------------------------" << std::endl;
-	std::cout << "|" << "index     " << "|" << "first name";
+	std::cout << "	---------------------------------------------" << std::endl;
+	std::cout << "	|" << "index     " << "|" << "first name";
 	std::cout << "|" << "last name " << "|" << "nickname  " << "|" << std::endl;
-	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "	---------------------------------------------" << std::endl;
 	for (int i = 0; i < this->_full; ++i) {
 		this->_Contacts[i].show_contacts();
 	}
