@@ -64,6 +64,7 @@ void	PhoneBook::show() {
 		std::cout << "No contacts to show" << std::endl;
 		return ;
 	}
+
 	std::cout << "	---------------------------------------------" << std::endl;
 	std::cout << "	|" << "index     " << "|" << "first name"
 				<< "|" << "last name " << "|" << "nickname  " << "|" << std::endl;
@@ -73,7 +74,7 @@ void	PhoneBook::show() {
 	}
 
 	while (true) {
-		std::cout << "Enter the index of the contact that you want to show all his infos (0 to break): ";
+		std::cout << "Enter the index of a contact to show all his infos (0 to break): ";
 		std::getline(std::cin, input);
 		this->control_D();
 		if (input.length() == 1 && std::isdigit(input[0]))
